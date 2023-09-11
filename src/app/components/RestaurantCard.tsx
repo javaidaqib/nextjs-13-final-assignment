@@ -15,11 +15,11 @@ export default function RestaurantCard({restaurant} : RestaurantCardProps) {
 					alt=""
 					className="w-full h-36"
 				/>
-				<div className="p-1">
+				<div className="p-2">
 					<h3 className="font-bold text-2xl mb-2 text-black">
 						{restaurant.name}
 					</h3>
-					<div className="flex items-start text-gray-700">
+					<div className="flex items-start text-gray-700 font-bold">
 						<div className="flex mb-2">*****</div>
 						<p className="ml-2">77 reviews</p>
 					</div>
