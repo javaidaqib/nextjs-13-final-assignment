@@ -8,8 +8,9 @@ export default async function handler(
   res: NextApiResponse
 ) {
   if (req.method === "POST") {
+    const { reservationName } = req.body
     await prisma.cuisine.create({
-      data: { ...req.body },
+      data: { name: reservationName },
     });
 
     res.status(201).json({ message: "Reservation created successfully!" });

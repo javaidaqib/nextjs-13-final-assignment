@@ -7,8 +7,10 @@ import { useState } from "react";
 interface ReservationProp {
   firstName: string | number | readonly string[] | undefined;
   lastName?: string | number | readonly string[] | undefined;
+  reservationName: string | number | readonly string[] | undefined;
   phone: string | number | readonly string[] | undefined;
   email: string | number | readonly string[] | undefined;
+  restaurantNumber: string | number | readonly string[] | undefined;
   occasion?: string | number | readonly string[] | undefined;
   request?: string | number | readonly string[] | undefined;
 }
@@ -19,8 +21,10 @@ export default function ReservationForm() {
   const [form, setForm] = useState<ReservationProp>({
     firstName: "",
     lastName: "",
+    reservationName: "",
     phone: "",
     email: "",
+    restaurantNumber: "",
     occasion: "",
     request: "",
   });
@@ -63,6 +67,14 @@ export default function ReservationForm() {
       <input
         type="text"
         className="border rounded p-3 w-80 mb-4"
+        placeholder="Reservation Name"
+        name="reservationName"
+        value={form.reservationName}
+        onChange={onFormChange}
+      />
+      <input
+        type="text"
+        className="border rounded p-3 w-80 mb-4"
         placeholder="Phone number"
         name="phone"
         value={form.phone}
@@ -74,6 +86,14 @@ export default function ReservationForm() {
         placeholder="Email"
         name="email"
         value={form.email}
+        onChange={onFormChange}
+      />
+      <input
+        type="text"
+        className="border rounded p-3 w-80 mb-4"
+        placeholder="Restaurant Number"
+        name="restaurantNumber"
+        value={form.restaurantNumber}
         onChange={onFormChange}
       />
       <input
