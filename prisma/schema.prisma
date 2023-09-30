@@ -35,7 +35,7 @@ model Restaurant {
   cuisine     Cuisine  @relation(fields: [cuisine_id], references: [id])
 
   reservation_id Int
-  reservation   Reservation @relation((fields: [reservation_id], references: [id]))
+  reservation    Reservation @relation(fields: [reservation_id], references: [id])
 
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
